@@ -69,10 +69,6 @@ class CronosDownTCP extends InstanceBase {
 						dataResponse = data.toString('hex')
 					}
 
-					this.setVariableValues({ tcp_response: dataResponse })
-
-					this.updateButtonWithText(dataResponse)
-
 					this.setVariableValues({ custom_message: this.config.custom_text || '' }) // Usar o texto customizado definido nas configurações
 
 					this.updateReceivedMessages(dataResponse)
