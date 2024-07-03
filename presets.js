@@ -240,37 +240,6 @@ export function getPresetDefinitions() {
             ],
         };
     }
-    // Gerar presets de comando PPT
-    for (let i = 1; i <= 20; i++) {
-        const pptCommand = i < 10 ? `preset\n0${i}` : `preset\n${i}`
-        const pptText = `preset${i}`
-        const variableName = `$(Cronos:item${i})`; // Nome da variável correspondente ao item
-        presets[`preset_${pptCommand}`] = {
-            type: 'button',
-            category: 'Preset',
-            name: `Send ${pptCommand.toUpperCase()} Command`,
-            style: {
-                text: variableName,
-                size: '14',
-                color: '16777215',
-                bgcolor: '25600',
-                show_topbar: false
-            },
-            steps: [
-                {
-                    down: [
-                        {
-                            actionId: 'send',
-                            options: {
-                                id_send: pptText,
-                            },
-                        },
-                    ],
-                    up: [],
-                },
-            ],
-        }
-    }
 
 
     return presets;
