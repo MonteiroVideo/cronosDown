@@ -1,5 +1,5 @@
 {
-	"name": "ppt-video",
+	"name": "cronosdown",
 	"version": "1.0.0",
 	"main": "index.js",
 	"type": "module",
@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-monteiro-pptvideoosc.git"
+		"url": "git+https://github.com/MonteiroVideo/cronosDown.git"
 	},
 	"dependencies": {
 		"@companion-module/base": "~1.1.1"
