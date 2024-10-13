@@ -1,12 +1,12 @@
 {
-	"id": "CronosDown",
-	"name": "CronosDown",
-	"shortname": "Cronos",
+	"id": "monteiro-cronosdown",
+	"name": "monteiro-cronosdown",
+	"shortname": "cronosdown",
 	"description": "This software is for use as a stopwatch, making it easier to manipulate times through the companion.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
-	"repository": "git+https://github.com/MonteiroVideo/cronosDown.git",
-	"bugs": "https://github.com/MonteiroVideo/cronosDown/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-monteiro-cronosdown.git",
+	"bugs": "https://github.com/bitfocus/companion-module-monteiro-cronosdown/issues",
 	"maintainers": [
 		{
 			"name": "Bruno Monteiro",
