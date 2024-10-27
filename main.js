@@ -131,23 +131,6 @@ class CronosDownTCP extends InstanceBase {
 
 		this.setVariableValues(initialValues);
 	}
-
-	update_tcp_variables() {
-		const now = new Date()
-		const hours = now.getHours().toString().padStart(2, '0')
-		const minutes = now.getMinutes().toString().padStart(2, '0')
-		const seconds = now.getSeconds().toString().padStart(2, '0')
-
-		this.setVariableValues({
-			timer_hours: hours,
-			timer_minutes: minutes,
-			timer_seconds: seconds,
-			timer: `${hours}:${minutes}:${seconds}`
-		})
-	}
-	
-
-
 	
 }
 
