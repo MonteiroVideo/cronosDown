@@ -13,6 +13,6 @@ In the preset section, you will have information about your time list, and all o
 
 On the set page, you have values ​​already defined for use, but when you press them, you must also press the set button to be able to define them.
 
-Here is the link to download the software: 
+Here is the link to download the software:
 
 https://monteiroaudiovisua.wixsite.com/ppt-video

@@ -66,12 +66,12 @@ export function getPresetDefinitions() {
                 },
             ],
         },
-        preset_set: {
+        preset_define: {
             type: 'button',
             category: 'Control',
             name: 'Set Timer',
             style: {
-                text: 'SET',
+                text: 'DEFINE',
                 size: '18',
                 color: '16777215',
                 bgcolor: '43520',
@@ -81,7 +81,7 @@ export function getPresetDefinitions() {
                 {
                     down: [
                         {
-                            actionId: 'SET',
+                            actionId: 'DEFINE',
                         },
                     ],
                     up: [],
@@ -164,6 +164,8 @@ export function getPresetDefinitions() {
 
     };
 
+
+    // Função auxiliar para adicionar presets SET
     function addSetPreset(minutes) {
         presets[`preset_set${minutes}`] = {
             type: 'button',
@@ -191,7 +193,8 @@ export function getPresetDefinitions() {
             ],
         };
     }
-    
+
+    // Adicionar presets SET
     addSetPreset(1);
     addSetPreset(5);
     addSetPreset(15);
@@ -209,9 +212,12 @@ export function getPresetDefinitions() {
     addTimePreset('subtractHour', 'SUB\n1 HR', 'Subtract 1 Hour');
     addTimePreset('addMin', 'ADD\nMIN', 'Add Minute');
     addTimePreset('subtractMin', 'SUB\nMIN', 'Subtract Minute');
-    addTimePreset('AA', 'AA', 'AA');
-    addTimePreset('aa', 'aa', 'aa');
+    addTimePreset('AA', 'AA\nTimer', 'AA');
+    addTimePreset('aa', 'aa\nTimer', 'aa');
+    addTimePreset('BB', 'AA\nMsg', 'BB');
+    addTimePreset('bb', 'aa\nMsg', 'bb');
 
+    // Função auxiliar para adicionar presets de tempo
     function addTimePreset(actionId, text, name) {
         presets[`preset_${actionId}`] = {
             type: 'button',
@@ -237,11 +243,15 @@ export function getPresetDefinitions() {
         };
     }
 
+    
+    // Gerar presets de comando para os presets 1 a 20
 for (let i = 1; i <= 20; i++) {
-    const pptCommand = i < 10 ? `preset\n0${i}` : `preset\n${i}`
-    const pptText = `preset${i}`
+    const paddedNumber = i < 10 ? `0${i}` : `${i}`; // Adiciona zero à esquerda para números de 1 a 9
+    const actionId = `preset${paddedNumber}`;
+    const pptCommand = `preset${paddedNumber}`;
     const variableName = `$(Cronos:item${i})`; // Nome da variável correspondente ao item
-    presets[`preset_${pptCommand}`] = {
+    
+    presets[`preset_${actionId}`] = {
         type: 'button',
         category: 'Preset',
         name: `Send ${pptCommand.toUpperCase()} Command`,
@@ -256,18 +266,16 @@ for (let i = 1; i <= 20; i++) {
             {
                 down: [
                     {
-                        actionId: 'send',
+                        actionId: actionId,
                         options: {
-                            id_send: pptText,
+                            presetId: i, // Identifica o número do preset
                         },
                     },
                 ],
                 up: [],
             },
         ],
-    }
+    };
 }
-
-
     return presets;
 }
